@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./static/css/bootstrap/bootstrap.min.css">
+    <title>Munchkin Counter</title>
+
+</head>
+
+<body>
+    <div id="app" class="container-fluid">
+        <div id="players" class="row ">
+            <div is="player" v-for="(p, index) in listPlayers" v-bind:key="index" v-bind:playername="p" v-on:remove="removePlayer(index)">
+            </div>
+        </div>
+
+        <!-- add player-->
+        <div class="row">
+            <input type="text" id="playerToAdd" placeholder="Add a player" />
+            <div class="btn-group" role="group" aria-label="Basic example"> <button class="btn btn-dark" v-on:click="addPlayer">Add player</button>
+                <button class="btn btn-dark" v-on:click="resetScores">Reset scores</button>
+                <button class="btn btn-dark" v-on:click="deleteAllPlayer">Delete all players</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="./static/js/jquery/jquery-3.2.1.min.js"></script>
+    <script src="./static/js/bootstrap/bootstrap.min.js"></script>
+    <script src="./static/js/vue/vue.min.js"></script>
+    <script src="./static/js/player.js"></script>
+    <script src="./static/js/index.js"></script>
+</body>
+
+</html>
